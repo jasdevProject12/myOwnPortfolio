@@ -1,0 +1,29 @@
+{
+  "name": "jasdev",
+  "version": "1.0.0",
+  "description": "my portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npm start": "node Server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasdevProject12/myOwnSite.git"
+  },
+  "author": "jasdev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasdevProject12/myOwnSite/issues"
+  },
+  "homepage": "https://github.com/jasdevProject12/myOwnSite#readme",
+  "devDependencies": {
+    "ejs": "^2.5.1",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-closure-compiler": "^0.4.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "xmldom": "^0.1.22"
+  }
+}

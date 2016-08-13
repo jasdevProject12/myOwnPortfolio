@@ -1,0 +1,23 @@
+$bodyMargin : 0px;
+$bodyPadding : 0px;
+$mainHighlightHeight : inherit;
+$mainHighlightWidth : 100%;
+
+* {
+   margin: $bodyMargin;
+   padding: $bodyPadding;
+}
+
+.mainHighlightsViewType {
+	height : $mainHighlightHeight;
+	width : $mainHighlightWidth;
+	display : table;
+}
+
+.mainHightlightTableRow {
+	display: table-row;
+}
+.mainHightlightTableCell {
+	display: table-cell;
+	background-color : red;	
+}

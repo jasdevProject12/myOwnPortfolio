@@ -1,0 +1,15 @@
+* {
+  margin: 0px;
+  padding: 0px; }
+
+.mainHighlightsViewType {
+  height: inherit;
+  width: 100%;
+  display: table; }
+
+.mainHightlightTableRow {
+  display: table-row; }
+
+.mainHightlightTableCell {
+  display: table-cell;
+  background-color: red; }
