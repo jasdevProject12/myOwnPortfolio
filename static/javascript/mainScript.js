@@ -1,36 +1,51 @@
-document.addEventListener('DOMContentLoaded', domContentLoaded, false);
-var innerHeight = window.innerHeight;
-var innerWidth = screen.width;
+var myPortfolioApp = angular.module('myPortfolioApp', []);
+
 var innerWidthMinimumSize = 600;
 
 var mainHighlightsDesktopViewPath = 'views/subHTMLTemplate/desktopView.html';
 var mainHighlightsMobileViewPath = 'views/subHTMLTemplate/mobileView.html';
-var mainHighlightDiv = document.getElementById('mainHighlights');
+var ajaxRequestForMainHighlightContent = '/getMainHighlightContent';
 
-function domContentLoaded(event) {
-	var mainHighlightDiv = document.getElementById('mainHighlights');
-	angular.element(mainHighlightDiv).css('height', innerHeight + 'px');
-};
-var app1 = angular.module('myPortfolioApp', []);
-app1.controller('mainHighlight', function($scope, $window) {
-	displayPortfolioTemplates($scope, innerWidth);
-	angular.element($window).bind('resize', function () {
-		innerWidth = screen.width;
-		innerHeight = window.innerHeight;
-		console.log(window.innerHeight)
-    	displayPortfolioTemplates($scope, innerWidth);
-    	$scope.$apply();
-	});
+var mainHighlightAngularElem;
+
+document.addEventListener('DOMContentLoaded', domContentLoaded, false);
+
+myPortfolioApp.controller('mainHighlight', function($scope, $window) {
+	setupPortfolioTemplates($scope, $window);
+	//setupPortfolioHTMLContent($scope);
 });
 
-app1.controller('myPortfolioMain', function($scope, $sce) {
+myPortfolioApp.controller('myPortfolioMain', function($scope, $sce) {
 	$scope.helloWorld = $sce.trustAsHtml("<h1>hello dev</h1>");
 });
+
+function domContentLoaded(event) {
+	let screenSize = getScreenSize();
+	let mainHighlightDiv = document.getElementById('mainHighlights');
+	mainHighlightAngularElem = angular.element(mainHighlightDiv);
+	mainHighlightAngularElem.css('height', screenSize.height + 'px');
+}
+
+function getScreenSize() {
+	console.log(innerWidth);
+	return {width: window.outerWidth, height: window.innerHeight};
+}
+
+function setupPortfolioTemplates(scope, windowObj) {
+	displayPortfolioTemplates(scope, innerWidth);
+	let screenSize = {};
+	angular.element(windowObj).bind('resize', function () {
+		screenSize = getScreenSize();
+		displayPortfolioTemplates(scope, screenSize.width);
+		mainHighlightAngularElem.css('height', screenSize.height + 'px');
+		scope.$apply();
+	});
+}
+
 function displayPortfolioTemplates(scope, innerWidth) {
 	if(innerWidth > innerWidthMinimumSize && scope.view != mainHighlightsDesktopViewPath) {
 		scope.view = mainHighlightsDesktopViewPath;
 	} else if(innerWidth <= innerWidthMinimumSize && scope.view != mainHighlightsMobileViewPath) {
 		scope.view = mainHighlightsMobileViewPath;
 	}
-	angular.element(mainHighlightDiv).css('height', innerHeight + 'px');
 }

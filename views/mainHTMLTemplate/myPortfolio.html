@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html ng-app = "myPortfolioApp">
 	<head>
+		<meta charset="UTF-8">
 		<script src = "/static/javascript/bower_components/angular/angular.js"></script>
 		<script src = "/static/javascript/mainScript.js"></script>
 		<link rel = "stylesheet" type = "text/css" href = "/static/css/mainStyle.css"></link>
 	</head>
 	<body>
-		<div id = "mainHighlights" ng-controller = "mainHighlight">
+		<div id = "mainHighlights" ng-controller="mainHighlight">
 			<div class = "mainHighlightsViewType" ng-include src="view"></div>
 		</div>
 		<div id = "myPortfolioMain" ng-controller="myPortfolioMain">
