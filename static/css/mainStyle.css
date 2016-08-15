@@ -1,15 +1,25 @@
 * {
-  margin: 0px;
-  padding: 0px; }
+  margin: 0px; }
 
 .mainHighlightsViewType {
   height: inherit;
   width: 100%;
-  display: table; }
+  background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
+  background-size: 100% 100%; }
+  @media (min-width: 601px) {
+    .mainHighlightsViewType {
+      display: table; } }
 
 .mainHightlightTableRow {
   display: table-row; }
 
 .mainHightlightTableCell {
-  display: table-cell;
-  background-color: red; }
+  height: 25%;
+  width: 25%;
+  padding: 10px;
+  color: white;
+  font-family: arial;
+  font-size: 14pt; }
+  @media (min-width: 601px) {
+    .mainHightlightTableCell {
+      display: table-cell; } }

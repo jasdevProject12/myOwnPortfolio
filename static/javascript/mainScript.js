@@ -10,13 +10,13 @@ var mainHighlightAngularElem;
 
 document.addEventListener('DOMContentLoaded', domContentLoaded, false);
 
-myPortfolioApp.controller('mainHighlight', function($scope, $window) {
+myPortfolioApp.controller('mainHighlight', function($scope, $window, $http, $sce) {
 	setupPortfolioTemplates($scope, $window);
-	//setupPortfolioHTMLContent($scope);
+	setupPortfolioHTMLContent($scope, $http, $sce, ajaxRequestForMainHighlightContent);
 });
 
 myPortfolioApp.controller('myPortfolioMain', function($scope, $sce) {
-	$scope.helloWorld = $sce.trustAsHtml("<h1>hello dev</h1>");
+	//$scope.helloWorld = $sce.trustAsHtml("<h1>hello dev</h1>");
 });
 
 function domContentLoaded(event) {
@@ -28,7 +28,7 @@ function domContentLoaded(event) {
 
 function getScreenSize() {
 	console.log(innerWidth);
-	return {width: window.outerWidth, height: window.innerHeight};
+	return {width: window.innerWidth, height: window.innerHeight};
 }
 
 function setupPortfolioTemplates(scope, windowObj) {
@@ -43,9 +43,11 @@ function setupPortfolioTemplates(scope, windowObj) {
 }
 
 function displayPortfolioTemplates(scope, innerWidth) {
+	console.log('innerWidth : ' + innerWidth + ' innerWidthMinimumSize : ' + innerWidthMinimumSize);
 	if(innerWidth > innerWidthMinimumSize && scope.view != mainHighlightsDesktopViewPath) {
 		scope.view = mainHighlightsDesktopViewPath;
 	} else if(innerWidth <= innerWidthMinimumSize && scope.view != mainHighlightsMobileViewPath) {
+		console.log('Should Change ' + innerWidth);
 		scope.view = mainHighlightsMobileViewPath;
 	}
 }

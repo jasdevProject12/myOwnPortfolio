@@ -23,11 +23,13 @@ var self = module.exports = {
 	},
 
     getHTMLContentForMainHiglights: function (HTMLDoc, callback) {
-    	let HTMLParagraphs = HTMLDoc.$('p');
+    	let HTMLParagraphs = HTMLDoc.$('div');
     	let JSONData = {};
     	let elemPosition = 1;
-    	while (typeof HTMLParagraphs.html() !== 'undefined' && HTMLParagraphs.prop('tagName') == 'P') {
+    	console.log(HTMLParagraphs);
+    	while (typeof HTMLParagraphs.html() !== 'undefined' && HTMLParagraphs.prop('tagName') == 'DIV') {
 			JSONData['elemPosition' + elemPosition] = HTMLParagraphs.html();
+			console.log(HTMLParagraphs.html());
     		HTMLParagraphs = HTMLParagraphs.next();
     		elemPosition++;
     	}

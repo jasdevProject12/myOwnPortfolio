@@ -14,11 +14,13 @@ var pathForMainHighlightsContent = './myData/mainHighLights.html';
 
 app.get('/', function (request, respond) {
 	respond.render('mainHTMLTemplate/myPortfolio.html');
+	respond.end();
 });
 
-app.get('/getMainHighlight', function (request, respond) {
+app.get('/getMainHighlightContent', function (request, respond) {
 	readDOMContentData.getHTMLContentData(pathForMainHighlightsContent, function(JSONData) {
 		respond.send(JSONData);
+		respond.end();
 	});
 });
 

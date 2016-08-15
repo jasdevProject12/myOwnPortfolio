@@ -1,23 +1,38 @@
 $bodyMargin : 0px;
-$bodyPadding : 0px;
+//$bodyPadding : 0px;
 $mainHighlightHeight : inherit;
 $mainHighlightWidth : 100%;
-
+$backgroundColor : red;
+$screenSizeMinWidth : 601px;
+$cellWidth : 25%;
+$cellHeight : 25%;
+$imageUrl : 'http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg';
 * {
    margin: $bodyMargin;
-   padding: $bodyPadding;
+   //padding: $bodyPadding;
 }
 
 .mainHighlightsViewType {
 	height : $mainHighlightHeight;
 	width : $mainHighlightWidth;
-	display : table;
+	background-image : url($imageUrl);
+	background-size: 100% 100%;
+	@media (min-width: $screenSizeMinWidth) {
+	 	display: table; 
+	}
 }
 
 .mainHightlightTableRow {
 	display: table-row;
 }
 .mainHightlightTableCell {
-	display: table-cell;
-	background-color : red;	
+	height: $cellHeight;
+	width: $cellWidth;
+	@media (min-width: $screenSizeMinWidth) {
+	 	display: table-cell;
+	}
+	padding : 10px;	
+	color: white;
+	font-family: arial;
+	font-size: 14pt;
 }
