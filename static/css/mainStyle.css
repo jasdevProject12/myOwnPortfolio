@@ -18,7 +18,11 @@ body {
   .myProfileSummary {
     background-color: purple;
     opacity: 0.8;
-    padding: 10px; } }
+    padding: 10px;
+    width: 80%;
+    font-family: verdana;
+    text-align: justify;
+    margin-left: 80px; } }
 
 .mainHightlightTableCell {
   font-size: 14px;
@@ -30,4 +34,4 @@ body {
       display: table-cell;
       height: 25%;
       width: 25%;
-      font-size: 18px; } }
+      font-size: 16px; } }

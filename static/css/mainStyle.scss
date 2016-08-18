@@ -1,5 +1,4 @@
 $bodyMargin : 0px;
-//$bodyPadding : 0px;
 $mainHighlightHeight : inherit;
 $mainHighlightWidth : 100%;
 $backgroundColor : red;
@@ -7,6 +6,7 @@ $screenSizeMinWidth : 701px;
 $cellWidth : 25%;
 $cellHeight : 25%;
 $imageUrl : 'http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg';
+$mySummaryContentBackgroundColor : purple;
 
 body {
    margin: $bodyMargin;
@@ -29,9 +29,13 @@ body {
 
 .myProfileSummary {
 	@media (min-width: $screenSizeMinWidth) and (min-device-width: $screenSizeMinWidth) {
-		background-color : purple;
+		background-color : $mySummaryContentBackgroundColor;
 		opacity : 0.8;
 		padding : 10px;
+		width : 80%;
+		font-family : verdana;
+		text-align : justify;
+		margin-left:  80px;
 	}
 }
 
@@ -40,7 +44,7 @@ body {
 	 	display: table-cell;
 	 	height : $cellWidth;
 	 	width : $cellHeight;
-	 	font-size : 18px;
+	 	font-size : 16px;
 	}
 	font-size : 14px;
 	padding : 10px;	
