@@ -26,10 +26,8 @@ var self = module.exports = {
     	let HTMLParagraphs = HTMLDoc.$('div');
     	let JSONData = {};
     	let elemPosition = 1;
-    	console.log(HTMLParagraphs);
     	while (typeof HTMLParagraphs.html() !== 'undefined' && HTMLParagraphs.prop('tagName') == 'DIV') {
 			JSONData['elemPosition' + elemPosition] = HTMLParagraphs.html();
-			console.log(HTMLParagraphs.html());
     		HTMLParagraphs = HTMLParagraphs.next();
     		elemPosition++;
     	}

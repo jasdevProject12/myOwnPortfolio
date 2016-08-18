@@ -1,12 +1,14 @@
 var myPortfolioApp = angular.module('myPortfolioApp', []);
 
-var innerWidthMinimumSize = 600;
+var innerWidthMinimumSize = 700;
 
 var mainHighlightsDesktopViewPath = 'views/subHTMLTemplate/desktopView.html';
 var mainHighlightsMobileViewPath = 'views/subHTMLTemplate/mobileView.html';
 var ajaxRequestForMainHighlightContent = '/getMainHighlightContent';
 
 var mainHighlightAngularElem;
+
+var isTouchDevice = 'ontouchstart' in document.documentElement;
 
 document.addEventListener('DOMContentLoaded', domContentLoaded, false);
 
@@ -27,27 +29,37 @@ function domContentLoaded(event) {
 }
 
 function getScreenSize() {
-	console.log(innerWidth);
-	return {width: window.innerWidth, height: window.innerHeight};
+	let screenWidth = window.outerWidth;
+	let screenHeight = window.innerHeight;
+	/*if(isTouchDevice) {
+		screenWidth = screen.width;
+		screenHeight = screen.height;
+	} else {
+		screenWidth = window.innerWidth;
+		screenHeight = window.innerHeight;
+		let screenWidth = screen.availWidth;
+	let screenHeight = screen.availHeight;
+	}*/
+	return {width: screenWidth, height: screenHeight};
 }
 
 function setupPortfolioTemplates(scope, windowObj) {
-	displayPortfolioTemplates(scope, innerWidth);
 	let screenSize = {};
+	screenSize = getScreenSize();
+	displayPortfolioTemplates(scope, screenSize);
 	angular.element(windowObj).bind('resize', function () {
 		screenSize = getScreenSize();
-		displayPortfolioTemplates(scope, screenSize.width);
+		displayPortfolioTemplates(scope, screenSize);
 		mainHighlightAngularElem.css('height', screenSize.height + 'px');
 		scope.$apply();
 	});
 }
 
 function displayPortfolioTemplates(scope, innerWidth) {
-	console.log('innerWidth : ' + innerWidth + ' innerWidthMinimumSize : ' + innerWidthMinimumSize);
-	if(innerWidth > innerWidthMinimumSize && scope.view != mainHighlightsDesktopViewPath) {
+	if(innerWidth.width > innerWidthMinimumSize && scope.view != mainHighlightsDesktopViewPath) {
 		scope.view = mainHighlightsDesktopViewPath;
-	} else if(innerWidth <= innerWidthMinimumSize && scope.view != mainHighlightsMobileViewPath) {
-		console.log('Should Change ' + innerWidth);
+	} else if(innerWidth.width <= innerWidthMinimumSize && scope.view != mainHighlightsMobileViewPath) {
+		//console.log('Should Change ' + innerWidth);
 		scope.view = mainHighlightsMobileViewPath;
 	}
 }

@@ -1,25 +1,33 @@
-* {
-  margin: 0px; }
+body {
+  margin: 0px;
+  text-size-adjust: none; }
 
 .mainHighlightsViewType {
   height: inherit;
   width: 100%;
   background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
   background-size: 100% 100%; }
-  @media (min-width: 601px) {
+  @media (min-width: 701px) and (min-device-width: 701px) {
     .mainHighlightsViewType {
       display: table; } }
 
 .mainHightlightTableRow {
   display: table-row; }
 
+@media (min-width: 701px) and (min-device-width: 701px) {
+  .myProfileSummary {
+    background-color: purple;
+    opacity: 0.8;
+    padding: 10px; } }
+
 .mainHightlightTableCell {
-  height: 25%;
-  width: 25%;
+  font-size: 14px;
   padding: 10px;
   color: white;
-  font-family: arial;
-  font-size: 14pt; }
-  @media (min-width: 601px) {
+  font-family: arial; }
+  @media (min-width: 701px) and (min-device-width: 701px) {
     .mainHightlightTableCell {
-      display: table-cell; } }
+      display: table-cell;
+      height: 25%;
+      width: 25%;
+      font-size: 18px; } }
