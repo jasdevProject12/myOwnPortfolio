@@ -6,32 +6,38 @@ body {
   height: inherit;
   width: 100%;
   background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
-  background-size: 100% 100%; }
-  @media (min-width: 701px) and (min-device-width: 701px) {
+  background-size: cover; }
+  .mainHighlightsViewType .mainHightlightTableRow {
+    display: table-row; }
+  @media (min-width: 734px) and (min-device-width: 734px) {
     .mainHighlightsViewType {
+      background-size: 100% 100%;
       display: table; } }
-
-.mainHightlightTableRow {
-  display: table-row; }
-
-@media (min-width: 701px) and (min-device-width: 701px) {
-  .myProfileSummary {
-    background-color: purple;
-    opacity: 0.8;
+  .mainHighlightsViewType .mainHightlightTableCell {
+    font-size: 14px;
     padding: 10px;
-    width: 80%;
-    font-family: verdana;
-    text-align: justify;
-    margin-left: 80px; } }
+    color: white;
+    font-family: arial; }
+    @media (min-width: 734px) and (min-device-width: 734px) {
+      .mainHighlightsViewType .mainHightlightTableCell {
+        display: table-cell;
+        height: 25%;
+        width: 25%;
+        font-size: 16px; } }
 
-.mainHightlightTableCell {
-  font-size: 14px;
+.myTitleProfile {
+  text-align: center; }
+  @media (min-width: 734px) and (min-device-width: 734px) {
+    .myTitleProfile {
+      text-align: left; } }
+
+.myProfileSummary {
   padding: 10px;
-  color: white;
-  font-family: arial; }
-  @media (min-width: 701px) and (min-device-width: 701px) {
-    .mainHightlightTableCell {
-      display: table-cell;
-      height: 25%;
-      width: 25%;
-      font-size: 16px; } }
+  background-color: purple;
+  opacity: 0.8;
+  font-family: verdana;
+  text-align: justify; }
+  @media (min-width: 734px) and (min-device-width: 734px) {
+    .myProfileSummary {
+      width: 80%;
+      margin-left: 80px; } }
