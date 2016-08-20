@@ -1,6 +1,6 @@
 var myPortfolioApp = angular.module('myPortfolioApp', []);
 
-var innerWidthMinimumSize = 732;
+var innerWidthMinimumSize = 734;
 
 var mainHighlightsDesktopViewPath = 'views/subHTMLTemplate/desktopView.html';
 var mainHighlightsMobileViewPath = 'views/subHTMLTemplate/mobileView.html';

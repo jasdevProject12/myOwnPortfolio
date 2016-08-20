@@ -10,53 +10,63 @@ $imageUrl : 'http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_
 $mySummaryContentBackgroundColor : purple;
 
 body {
-   margin: $bodyMargin;
-   text-size-adjust: none;
-}
+   	margin: $bodyMargin;
+   	text-size-adjust: none;
 
-.mainHighlightsViewType {
-	height : $mainHighlightHeight;
-	width : $mainHighlightWidth;
-	background-image : url($imageUrl);
-	background-size: cover;
-	//Table row
-	.mainHightlightTableRow {
-		display: table-row;
-	}
+    //Desktop View
 	@media (min-width: $screenSizeMinWidth) and (min-device-width: $screenSizeMinWidth) {
-		background-size: 100% 100%;
-	 	display: table; 
-	}
-	.mainHightlightTableCell {
-		@media (min-width: $screenSizeMinWidth) and (min-device-width: $screenSizeMinWidth) {
-		 	display: table-cell;
-		 	height : $cellWidth;
-		 	width : $cellHeight;
-		 	font-size : 16px;
-	}
-		font-size : 14px;
-		padding : 10px;	
-		color: white;
-		font-family: arial;
+		.mainHighlightsViewType {
+			background-size: 100% 100% !important;
+		 	display: table; 
+		 	
+		 	//Table row
+			.mainHightlightTableRow {
+				display: table-row;
+			}
+
+			.mainHightlightTableCell {
+			 	display: table-cell;
+			 	height : $cellWidth;
+			 	width : $cellHeight;
+			 	font-size : 16px;
+			}
+
+			.myTitleProfile {
+				text-align : left !important;
+			}
+
+			.myProfileSummary {
+				width : 80%;
+				margin-left:  80px;
+			}
+		}
+		
 	}
 
-}
+	//By Default Mobile view
+	.mainHighlightsViewType {
+		height : $mainHighlightHeight;
+		width : $mainHighlightWidth;
+		background-image : url($imageUrl);
+		background-size: cover;
+		
+		.mainHightlightTableCell {
+			font-size : 14px;
+			padding : 10px;	
+			color: white;
+			font-family: arial;
+		}
 
-.myTitleProfile {
-	@media (min-width: $screenSizeMinWidth) and (min-device-width: $screenSizeMinWidth) {
-		text-align : left;
-	}
-	text-align : center;
-}
+		.myTitleProfile {
+			text-align : center;
+		}
 
-.myProfileSummary {
-	@media (min-width: $screenSizeMinWidth) and (min-device-width: $screenSizeMinWidth) {
-		width : 80%;
-		margin-left:  80px;
+		.myProfileSummary {
+			padding : 10px;
+			background-color : $mySummaryContentBackgroundColor;
+			opacity : 0.8;
+			font-family : verdana;
+			text-align : justify;
+		}
 	}
-	padding : 10px;
-	background-color : $mySummaryContentBackgroundColor;
-	opacity : 0.8;
-	font-family : verdana;
-	text-align : justify;
 }
