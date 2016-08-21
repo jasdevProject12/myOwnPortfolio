@@ -1,37 +1,41 @@
 body {
   margin: 0px;
-  text-size-adjust: none; }
-  @media (min-width: 734px) and (min-device-width: 734px) {
-    body .mainHighlightsViewType {
-      background-size: 100% 100% !important;
-      display: table; }
-      body .mainHighlightsViewType .mainHightlightTableRow {
-        display: table-row; }
-      body .mainHighlightsViewType .mainHightlightTableCell {
+  text-size-adjust: none;
+  font-family: arial; }
+  body .mainHighlightsViewType {
+    display: table;
+    height: inherit;
+    width: 100%;
+    background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
+    color: white; }
+    @media only screen and (max-width: 734px) {
+      body .mainHighlightsViewType {
+        background-size: cover; } }
+    @media only screen and (min-width: 734px) {
+      body .mainHighlightsViewType {
+        background-size: 100% 100%; }
+        body .mainHighlightsViewType .mainHightlightTableRow {
+          display: table-row; } }
+  body .mainHightlightTableCell {
+    padding: 10px; }
+    @media only screen and (max-width: 734px) {
+      body .mainHightlightTableCell {
+        font-size: 15px; }
+        body .mainHightlightTableCell .myTitleProfile {
+          text-align: center; } }
+    @media only screen and (min-width: 734px) {
+      body .mainHightlightTableCell {
         display: table-cell;
         height: 25%;
         width: 25%;
         font-size: 16px; }
-        body .mainHighlightsViewType .mainHightlightTableCell .myTitleProfile {
-          text-align: left !important; }
-        body .mainHighlightsViewType .mainHightlightTableCell .myProfileSummary {
-          width: 80%;
-          margin-left: 80px; } }
-  body .mainHighlightsViewType {
-    height: inherit;
-    width: 100%;
-    background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
-    background-size: cover;
-    color: white; }
-    body .mainHighlightsViewType .mainHightlightTableCell {
-      font-size: 14px;
+        body .mainHightlightTableCell .myTitleProfile {
+          text-align: left; }
+        body .mainHightlightTableCell .myProfileSummary {
+          width: 90%; } }
+    body .mainHightlightTableCell .myProfileSummary {
       padding: 10px;
-      font-family: arial; }
-      body .mainHighlightsViewType .mainHightlightTableCell .myTitleProfile {
-        text-align: center; }
-      body .mainHighlightsViewType .mainHightlightTableCell .myProfileSummary {
-        padding: 10px;
-        background-color: purple;
-        opacity: 0.8;
-        font-family: verdana;
-        text-align: justify; }
+      background-color: purple;
+      opacity: 0.8;
+      font-family: verdana;
+      text-align: justify; }

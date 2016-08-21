@@ -51,6 +51,7 @@ function setupPortfolioTemplates(scope, windowObj) {
 		screenSize = getScreenSize();
 		displayPortfolioTemplates(scope, screenSize);
 		mainHighlightAngularElem.css('height', screenSize.height + 'px');
+		//mainHighlightAngularElem.css('width', screenSize.width + 'px');
 		scope.$apply();
 	});
 }

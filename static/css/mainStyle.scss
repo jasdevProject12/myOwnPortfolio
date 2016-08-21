@@ -1,8 +1,7 @@
 $bodyMargin : 0px;
+$minWidth: 734px;
 $mainHighlightHeight : inherit;
 $mainHighlightWidth : 100%;
-
-$screenSizeMinWidth : 734px;
 $cellWidth : 25%;
 $cellHeight : 25%;
 
@@ -11,30 +10,52 @@ $mySummaryContentBackgroundColor : purple;
 
 @import 'mainHighlightsMobileDesktop';
 
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: $minWidth) { @content; }
+  }
+  @else if $media == medium-screens {
+    @media only screen and (min-width: $minWidth + 1) and (max-width: $minWidth - 1) { @content; }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $minWidth) { @content; }
+  }
+}
+
 body {
-   	margin: $bodyMargin;
-   	text-size-adjust: none;
+	margin: $bodyMargin;
+	text-size-adjust: none;
+	font-family: arial;
 
-    //Desktop View
-	@media (min-width: $screenSizeMinWidth) and (min-device-width: $screenSizeMinWidth) {
-		.mainHighlightsViewType {
-			@include getMainHighlightsDesktopViewType();
-
-			.mainHightlightTableCell {
-			 	@include getMainHightlightDesktopTableCell();
-			}
-
-		}
-		
-	}
-
-	//By Default Mobile view
+	//Desktop View
 	.mainHighlightsViewType {
-		@include getMainHighlightsMobileViewType();
+		display: table; 
+		height : $mainHighlightHeight;
+		width : $mainHighlightWidth;
+		background-image : url($imageUrl);
+		color: white;
+		@include respond-to(handhelds) { 
+			@include getMainHighlightsMobileViewType();
+		}
+		@include respond-to(wide-screens) {
+			@include getMainHighlightsDesktopViewType();
+		}
 
-	.mainHightlightTableCell {
-		@include getMainHightlightMobileTableCell();
 	}
-
+	.mainHightlightTableCell {
+		@include respond-to(handhelds) { 
+			@include getMainHightlightMobileTableCell();
+		}
+		@include respond-to(wide-screens) {
+			@include getMainHightlightDesktopTableCell();
+		}
+		padding : 10px;	
+		.myProfileSummary {
+			padding : 10px;
+			background-color : $mySummaryContentBackgroundColor;
+			opacity : 0.8;
+			font-family : verdana;
+			text-align : justify;
+		}
 	}
 }

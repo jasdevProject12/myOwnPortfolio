@@ -1,14 +1,9 @@
 @mixin getMainHighlightsMobileViewType() {
-	height : $mainHighlightHeight;
-	width : $mainHighlightWidth;
-	background-image : url($imageUrl);
 	background-size: cover;
-	color: white;
 }
 
 @mixin getMainHighlightsDesktopViewType() {
-	background-size: 100% 100% !important;
-	display: table; 
+	background-size: 100% 100%;
 	//Table row
 	.mainHightlightTableRow {
 		display: table-row;
@@ -16,19 +11,9 @@
 }
 
 @mixin getMainHightlightMobileTableCell() {
-	font-size : 14px;
-	padding : 10px;	
-	font-family: arial;
+	font-size : 15px;
 	.myTitleProfile {
 		text-align : center;
-	}
-
-	.myProfileSummary {
-		padding : 10px;
-		background-color : $mySummaryContentBackgroundColor;
-		opacity : 0.8;
-		font-family : verdana;
-		text-align : justify;
 	}
 }
 
@@ -38,11 +23,9 @@
 	width : $cellHeight;
 	font-size : 16px;
 	.myTitleProfile {
-		text-align : left !important;
+		text-align : left;
 	}
-
 	.myProfileSummary {
-		width : 80%;
-		margin-left:  80px;
+		width : 90%;
 	}
 }
