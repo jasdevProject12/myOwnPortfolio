@@ -12,26 +12,26 @@ body {
         height: 25%;
         width: 25%;
         font-size: 16px; }
-      body .mainHighlightsViewType .myTitleProfile {
-        text-align: left !important; }
-      body .mainHighlightsViewType .myProfileSummary {
-        width: 80%;
-        margin-left: 80px; } }
+        body .mainHighlightsViewType .mainHightlightTableCell .myTitleProfile {
+          text-align: left !important; }
+        body .mainHighlightsViewType .mainHightlightTableCell .myProfileSummary {
+          width: 80%;
+          margin-left: 80px; } }
   body .mainHighlightsViewType {
     height: inherit;
     width: 100%;
     background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
-    background-size: cover; }
+    background-size: cover;
+    color: white; }
     body .mainHighlightsViewType .mainHightlightTableCell {
       font-size: 14px;
       padding: 10px;
-      color: white;
       font-family: arial; }
-    body .mainHighlightsViewType .myTitleProfile {
-      text-align: center; }
-    body .mainHighlightsViewType .myProfileSummary {
-      padding: 10px;
-      background-color: purple;
-      opacity: 0.8;
-      font-family: verdana;
-      text-align: justify; }
+      body .mainHighlightsViewType .mainHightlightTableCell .myTitleProfile {
+        text-align: center; }
+      body .mainHighlightsViewType .mainHightlightTableCell .myProfileSummary {
+        padding: 10px;
+        background-color: purple;
+        opacity: 0.8;
+        font-family: verdana;
+        text-align: justify; }
