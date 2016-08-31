@@ -1,29 +1,27 @@
 body {
   margin: 0px;
   text-size-adjust: none;
-  font-family: arial; }
+  font-family: arial;
+  color: black; }
   body .mainHighlightsViewType {
     display: table;
     height: inherit;
     width: 100%;
+    border-spacing: 0;
     background-image: url("http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg");
-    color: white; }
-    @media only screen and (max-width: 734px) {
-      body .mainHighlightsViewType {
-        background-size: cover; } }
-    @media only screen and (min-width: 734px) {
-      body .mainHighlightsViewType {
-        background-size: 100% 100%; }
-        body .mainHighlightsViewType .mainHightlightTableRow {
-          display: table-row; } }
+    color: white;
+    background-size: cover; }
+    @media only screen and (min-width: 738px) {
+      body .mainHighlightsViewType .mainHightlightTableRow {
+        display: table-row; } }
   body .mainHightlightTableCell {
     padding: 10px; }
-    @media only screen and (max-width: 734px) {
+    @media only screen and (max-width: 738px) {
       body .mainHightlightTableCell {
         font-size: 15px; }
         body .mainHightlightTableCell .myTitleProfile {
           text-align: center; } }
-    @media only screen and (min-width: 734px) {
+    @media only screen and (min-width: 738px) {
       body .mainHightlightTableCell {
         display: table-cell;
         height: 25%;
@@ -39,3 +37,18 @@ body {
       opacity: 0.8;
       font-family: verdana;
       text-align: justify; }
+  body .myPortfolioMainNavBar {
+    padding: 10px;
+    background-color: #9c5cb0;
+    font-weight: bold;
+    color: white; }
+    body .myPortfolioMainNavBar .myPortfolioMainNavBarTitle {
+      margin: 10px; }
+    body .myPortfolioMainNavBar .myPortfolioMainNavBarTitle:hover {
+      cursor: hand; }
+    @media only screen and (max-width: 738px) {
+      body .myPortfolioMainNavBar {
+        font-size: 15px; } }
+    @media only screen and (min-width: 738px) {
+      body .myPortfolioMainNavBar {
+        font-size: 18px; } }

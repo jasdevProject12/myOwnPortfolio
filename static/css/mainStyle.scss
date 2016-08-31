@@ -1,9 +1,10 @@
 $bodyMargin : 0px;
-$minWidth: 734px;
+$minWidth: 738px;
 $mainHighlightHeight : inherit;
 $mainHighlightWidth : 100%;
 $cellWidth : 25%;
 $cellHeight : 25%;
+$defaultBodyFontColor : black;
 
 $imageUrl : 'http://res.cloudinary.com/tempest/image/upload/c_limit,cs_srgb,dpr_1.0,q_80,w_10000/MTMwMjg4MjE4Mzk3NTc4NTE0.jpg';
 $mySummaryContentBackgroundColor : purple;
@@ -26,36 +27,55 @@ body {
 	margin: $bodyMargin;
 	text-size-adjust: none;
 	font-family: arial;
-
+	color : $defaultBodyFontColor;
 	//Desktop View
 	.mainHighlightsViewType {
 		display: table; 
 		height : $mainHighlightHeight;
 		width : $mainHighlightWidth;
+		border-spacing: 0;
 		background-image : url($imageUrl);
 		color: white;
-		@include respond-to(handhelds) { 
-			@include getMainHighlightsMobileViewType();
-		}
+		background-size: cover;
 		@include respond-to(wide-screens) {
 			@include getMainHighlightsDesktopViewType();
 		}
 
 	}
 	.mainHightlightTableCell {
+		padding : 10px;	
 		@include respond-to(handhelds) { 
 			@include getMainHightlightMobileTableCell();
 		}
 		@include respond-to(wide-screens) {
 			@include getMainHightlightDesktopTableCell();
 		}
-		padding : 10px;	
 		.myProfileSummary {
 			padding : 10px;
 			background-color : $mySummaryContentBackgroundColor;
 			opacity : 0.8;
 			font-family : verdana;
 			text-align : justify;
+		}
+	}
+
+	//Main Portfolio
+	.myPortfolioMainNavBar {
+		padding : 10px;
+		background-color : #9c5cb0;
+		font-weight : bold;
+		color : white;
+		.myPortfolioMainNavBarTitle {
+			margin : 10px;
+		}
+		.myPortfolioMainNavBarTitle:hover {
+			cursor : hand;
+		}
+		@include respond-to(handhelds) {
+			@include myPortfolioMainNavBarMobile();
+		}
+		@include respond-to(wide-screens) {
+			@include myPortfolioMainNavBarDesktop();
 		}
 	}
 }
