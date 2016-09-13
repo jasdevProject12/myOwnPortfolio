@@ -20,24 +20,28 @@ var self = module.exports = {
 		let HTMLDom = cheerio.load(fileContent);
 		//console.log('global : ' + global.pathForMainHighlightsContent);
 		if (pathForHTMLContent.includes('mainHighLights.html')) {
-			self.getHTMLContentForMainHiglights(HTMLDom, callback);
+			self.getHTMLContentMainHiglights(HTMLDom, callback);
 		} else if (pathForHTMLContent.includes('mainContents.html')) {
-			self.getHTMLContentForMainContents(HTMLDom, callback)
+			self.getHTMLMainTitleContents(HTMLDom, callback);
 		} else {
 			console.log('Something is wrong');
 		}
 	},
 
-	getHTMLContentForMainContents : function(HTMLDom, callback) {
-		let HTMLDivChildNodes = HTMLDom('div#contentProjects').find('title');
-		projectTitles = [];
-		for (let indexPost = 0; indexPost < HTMLDivChildNodes.length; indexPost++) {
-			projectTitles.push({title : HTMLDivChildNodes[indexPost].children[0].data});
-		}
-		callback(projectTitles);
+	getHTMLMainTitleContents : function($, callback) {
+		//let HTMLDivChildNodes = $('div#contentProjects').find('title');
+		let projectContents = [];
+		let projectTitle, projectContent;
+		$('div#contentProjects').find('title').each(function(index) {
+			projectTitle = $(this).text();
+			projectContent = $(this).next().html();
+			projectContents.push({title : projectTitle, projectContent: projectContent});
+		});
+		//console.log(projectContents);
+		callback(projectContents);
 	},
 
-    getHTMLContentForMainHiglights : function (HTMLDom, callback) {
+    getHTMLContentMainHiglights : function (HTMLDom, callback) {
     	let JSONData = {};
     	try {
 	    	let HTMLDiv = HTMLDom('div');

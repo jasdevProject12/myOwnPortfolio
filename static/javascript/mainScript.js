@@ -10,6 +10,8 @@ var ajaxRequestPortfolioMainContent = '/getMainPortfolioContents';
 
 var mainHighlightAngularElem;
 
+var projectContentDocument = {};
+
 document.addEventListener('DOMContentLoaded', domContentLoaded, false);
 
 myPortfolioApp.controller('mainHighlight', function($scope, $window, $http, $sce) {
@@ -23,10 +25,22 @@ myPortfolioApp.directive('myportfoliomain', function() {
 		templateUrl : mainContentDesktopViewPath,
 		controller : function($scope, $http, $sce) {
 			setupPortfolioHTMLContent($scope, $http, $sce, ajaxRequestPortfolioMainContent);
-			console.log('hello world');
 		}
 	};
 });
+
+myPortfolioApp.filter('removeSpaceAndLowerCase', function () {
+	debugger;
+	return function(projectTitle) {
+		return removeSpaceAndLowerCases(projectTitle);
+	};
+});
+
+function removeSpaceAndLowerCases(projectTitle) {
+	var str = projectTitle.replace(/\s+/g, '');
+    projectContentDocument[projectTitle]
+    return str.toLowerCase();
+}
 
 function domContentLoaded(event) {
 	let screenSize = getScreenSize();

@@ -7,6 +7,11 @@ function setupPortfolioHTMLContent(ctrlScope, http, sce, ajaxPath) {
 	        ctrlScope.elemPosition4 = sce.trustAsHtml(response.data.elemPosition4);
     	} else if (ajaxPath == ajaxRequestPortfolioMainContent) {
     		ctrlScope.projectDetails = response.data;
+    		for(var i = 0; i <= response.data.length - 1; i++) {
+    			projecTitle = removeSpaceAndLowerCases(response.data[i].title);
+    			projectContentDocument[projecTitle.toString()] = response.data[i].projectContent;
+    		}
     	}
+    	console.log(projectContentDocument);
     });
 }
